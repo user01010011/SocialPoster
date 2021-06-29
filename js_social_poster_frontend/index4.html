@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Social Poster</title>
+    <link rel="stylesheet" href="./stylesheets/index.css">
+  </head>
+  <body>
+    <h1>Social Poster</h1>
+    <br>
+    <div class="form-container">
+      <form class="create-post-form">
+        <h2>Create A Post!</h2>
+        Title:<br><input id='input-title' type="text" name="title" value=""
+        placeholder="Enter your post title..." class="input-text"><br><br>
+        Content:<br><textarea id='input-content' name="content" cols="50" rows="10" value="" 
+        placeholder="Enter your post content..."></textarea><br><br>
+        Media attachment (optional):<br><input id='input-url' type="text" name="media" value=""
+        placeholder="Enter your media url..." class="input-text">
+        <br><br>
+        <select id="input-category" name="category">
+            <option value="1">JavaScript</option>
+            <option value="2">Rails</option>
+            <option value="3">Ruby</option>
+            <option value="4">React</option>
+            <option value="5">Redux</option>
+        </select>
+        <br><br>
+        <input id='create-button' type="submit" name="submit" value="Create Post" class="submit">
+      </form>
+    </div>
+    <br>
+    <br>
+    <div id="posts-collection">
+        <h2>All Community Posts: </h2>
+    </div>
+
+    <script src="javascripts/v4/post4.js"></script>
+    <script src="javascripts/v4/index4.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Poster </title>
+</head>
+<body>
+    <h1>Social Poster</h1>
+
+    <div id='form-container'>
+        <form id="posts-form">
+            <h2>Create A Post!</h2>
+            Title:<br><input id='input-title' type="text" name="title" value=""
+            placeholder="Enter your post title..." class="input-text"><br><br>
+            Content:<br><textarea id='input-content' name="content" cols="50" rows="10" value="" 
+            placeholder="Enter your post content..."></textarea><br><br>
+            Media attachment (optional):<br><input id='input-url' type="text" name="media" value=""
+            placeholder="Enter your media url..." class="input-text">
+            <br><br>
+            <select id="input-category" name="category">
+                <option value="1">JavaScript</option>
+                <option value="2">Rails</option>
+                <option value="3">Ruby</option>
+                <option value="4">React</option>
+                <option value="5">Redux</option>
+            </select>
+            <br><br>
+            <input type="submit" id="create-post-bttn" value="Create Post">
+            <br><br>
+    <div id="posts-container">
+        <h2>All Community Posts: </h2>
+    </div>
+
+       <script src="javascripts/v5/index5.js"></script>
+</body>
+</html>
