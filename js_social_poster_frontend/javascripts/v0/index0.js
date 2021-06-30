@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   createPostForm.addEventListener("submit", (e) => createFormHandler(e));
 
   const sortButton = document.querySelector("#sort-button.submit");
-//   debugger
- 
   sortButton.addEventListener("click", (e) => posts.sort((a,b) => a.post.title.localeCompare(b.post.title)))
 //   sortButton.addEventListener("click", (e) => posts.sort(function(a,b) { return a.post.title.localeCompare(b.post.title);}) );
 //   
