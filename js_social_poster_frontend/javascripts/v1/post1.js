@@ -11,6 +11,20 @@ class Post {
   }
 
   renderPostCard() {
+    var btn = document.createElement("BUTTON")
+    btn.setAttribute('class', 'like-btn')
+    btn.setAttribute('id', this.id)
+    btn.innerText = "like"
+    btn.addEventListener('click', (e) => {
+      console.log(e.target.datasest)
+      likes(e) 
+    })
+  
+    function likes(e){
+      e.preventDefault()
+      let more = parseInt(e.target.previousElementSibling.innerText) + 1
+    }
+
     return `
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
@@ -21,6 +35,7 @@ class Post {
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
               <input type="button" class="view-button" value="View"/>
+              <input type="button" class="like-button" value="Like"/>
               </div>
               <small class="card-category">Category:${this.category.category_name}</small>
               <div class="post-footer-line post-footer-line-3"/>
@@ -50,15 +65,15 @@ class Post {
 //     }
 // }
 
-// function handleButton(event){
-//    if (event.target.innerText === 'Delete'){
-//        deletePost(event.target)
-//    } else if (event.target.innerText === 'Edit'){
-//        editPost(event.target)
-//    } else if (event.target.innerText ==='View'){
-//        postShow(event.target)
-//    }
-// }
+function handleButton(event){
+   if (event.target.innerText === 'Delete'){
+       deletePost(event.target)
+   } else if (event.target.innerText === 'Edit'){
+       editPost(event.target)
+   } else if (event.target.innerText ==='View'){
+       postShow(event.target)
+   }
+}
 // }
     // return `
     //   <div data-id=${this.id}>

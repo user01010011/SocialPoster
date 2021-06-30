@@ -6,9 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   getPosts()
 
 //   event listener and handler for create post form
-  const createPostForm = document.querySelector("#create-post-form")
-  createPostForm.addEventListener("submit", (e) => createFormHandler(e))
+  const createPostForm = document.querySelector("#create-post-form");
+  createPostForm.addEventListener("submit", (e) => createFormHandler(e));
 
+  const sortButton = document.querySelector("#sort-button.submit");
+//   debugger
+ 
+  sortButton.addEventListener("click", (e) => posts.sort((a,b) => a.post.title.localeCompare(b.post.title)))
+//   sortButton.addEventListener("click", (e) => posts.sort(function(a,b) { return a.post.title.localeCompare(b.post.title);}) );
+//   
 })
 
 function getPosts() {
@@ -19,9 +25,11 @@ function getPosts() {
       // double check how your data is nested in the console so you can successfully access the attributes of each individual object
       // debugger
       let newPost = new Post(post, post.attributes)
+
       document.querySelector('#post-container').innerHTML += newPost.renderPostCard() //will wipe out eventListeners appendChild HTML 
       //adding event to the DOM 
       //add button here - find each post card, p tag after the button, put eventListener here, 
+      
     })
   })
 }
@@ -55,6 +63,8 @@ function postFetch(title, content, media_url, category_id) {
   })
 
 }
+
+
 
 
 
