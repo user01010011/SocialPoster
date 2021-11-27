@@ -63,9 +63,6 @@ function postFetch(title, content, media_url, category_id) {
 }
 
 
-
-
-
 // function deletePost(e) {
 //   e.preventDefault()
 //   const titleInput = document.querySelector('#card-title').value
@@ -74,7 +71,6 @@ function postFetch(title, content, media_url, category_id) {
 //   const categoryId = parseInt(document.querySelector('#card-category').value)
 //   postFetch(titleInput, contentInput, mediaInput, categoryId)
 // }
-
 
   // deleteButton.addEventListener('click', this.deletePost);
 //   const deletePost = document.querySelector("#delete-button")

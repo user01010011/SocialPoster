@@ -34,8 +34,9 @@ class Post {
             <p class="card-url">${this.media_url}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-              <input type="button" class="view-button" value="View"/>
-              <input type="button" class="like-button" value="Like"/>
+              <input type="button" class="view-button" data-id="${this.id}" value="View"/>
+              <input type="button" class="like-button" data-id="${this.id}" value="Like"/>
+              <span class="like-glyph" data-id="${this.id}">&#x2661;</span></li>
               </div>
               <small class="card-category">Category:${this.category.category_name}</small>
               <div class="post-footer-line post-footer-line-3"/>
@@ -47,6 +48,10 @@ class Post {
     `
   }
 }
+
+
+Post.all = [];
+
   //   function Delete(currentEl){
   //   currentEl.parentNode.parentNode.removeChild(currentEl.parentNode);
   // }
@@ -66,12 +71,14 @@ class Post {
 // }
 
 function handleButton(event){
-   if (event.target.innerText === 'Delete'){
-       deletePost(event.target)
+   if (event.target.innerText === 'View'){
+       viewPost(e)
    } else if (event.target.innerText === 'Edit'){
-       editPost(event.target)
-   } else if (event.target.innerText ==='View'){
-       postShow(event.target)
+       editPost(e)
+   } else if (event.target.innerText ==='Delete'){
+       deletePost(e)
+   }  else if (event.target.innerText === 'Like'){
+       likePost(e)
    }
 }
 // }
@@ -85,5 +92,21 @@ function handleButton(event){
     //   <br><br>`;
 
 
-Post.all = [];
+deleteButton.addEventListener('click', this.deletePost);
+const deletePost = document.querySelector("#delete-button")
+deletePost.addEventListener("delete", (e) => deletePostHandler(e))
 
+deletePost = () => {
+  fetch('http://localhost:3000/posts/' + this.id, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(resp => resp.json())
+  .then(data => {
+    Post.all = Post.all.filter(post => post.id !== this.post);
+    Post.displayAll();
+  })
+}

@@ -68,22 +68,4 @@ function postFetch(title, content, media_url, category_id) {
 // }
 
 
-  // deleteButton.addEventListener('click', this.deletePost);
-//   const deletePost = document.querySelector("#delete-button")
-//   deletePost.addEventListener("delete", (e) => deletePostHandler(e))
-
-//   deletePost = () => {
-//     fetch('http://localhost:3000/posts/' + this.id, {
-//       method: 'DELETE',
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//     .then(resp => resp.json())
-//     .then(data => {
-//       Post.all = Post.all.filter(post => post.id !== this.post);
-//       Post.displayAll();
-//     })
-//   }
 
