@@ -1,5 +1,4 @@
 class Post {
-
     constructor(post) {
       this.id = post.id
       this.title = post.attributes.title
@@ -8,7 +7,6 @@ class Post {
       this.category = post.attributes.category
       Post.all.push(this)
       console.log(this);
-      
     }
   
     renderPostCard() {

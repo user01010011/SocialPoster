@@ -1,16 +1,6 @@
 // call to js_social_poster_backend 
 const endPoint = "http://localhost:3000/posts"
 
-// class Post {
-//   constructor(post) {
-//     this.title = title; 
-//     this.content = content; 
-//     this.media_url = media_url; 
-//     this.category = category; 
-//     Post.all = []
-//   }
-// }
-
 // fetch and load posts
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM is Loaded");
@@ -73,7 +63,6 @@ function postFetch(title, content, media_url, category_id) {
   })
 
 }
-
 
 // function deletePost(e) {
 //   e.preventDefault()
