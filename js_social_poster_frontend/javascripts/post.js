@@ -23,7 +23,6 @@ class Post {
                 <div class="btn-group">
                   <input type="button" class="view-button" value="View"/>
                   <input type="button" class="like-button" value="Like "/>
-                  <input type="button" class="delete-button" value="delete"/>
                 </div>
                 <small class="card-category">Category:${this.category.category_name}</small>
                 <div class="post-footer-line post-footer-line-3"/>
