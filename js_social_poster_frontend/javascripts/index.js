@@ -1,7 +1,18 @@
+// call to js_social_poster_backend 
 const endPoint = "http://localhost:3000/posts"
 
+// class Post {
+//   constructor(post) {
+//     this.title = title; 
+//     this.content = content; 
+//     this.media_url = media_url; 
+//     this.category = category; 
+//     Post.all = []
+//   }
+// }
+
+// fetch and load posts
 document.addEventListener('DOMContentLoaded', () => {
-  // fetch and load posts
   console.log("DOM is Loaded");
   getPosts()
 
@@ -44,6 +55,7 @@ function createFormHandler(e) {
 
 function postFetch(title, content, media_url, category_id) {
   // build my body object outside of my fetch
+  // const bodyData = {title, content, media_url, category_id}
   const bodyData = {title, content, media_url, category_id}
   fetch(endPoint, {
     // POST request
@@ -54,7 +66,7 @@ function postFetch(title, content, media_url, category_id) {
   .then(resp => resp.json())
   .then(post => {
     // console.log(post);
-    const postData = post.data
+    // const postData = post.data
     // render JSON response
     let newPost = new Post(post, post.attributes)
     document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
