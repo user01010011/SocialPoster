@@ -21,18 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   sortButton.addEventListener('click', sortPost); 
   function sortPost(e) {
     console.log('you clicked sort button!')
-    // console.log(e);
-    // console.log(e.target);
-    // console.log(e.target.id);
-    // console.log(e.target.className);
-    // console.log(e.target.classList);
-    // console.log(e.clientX);
-    // console.log(e.clientY);  // client is from the window 
-    // console.log(e.offsetX);
-    // console.log(e.offsetY); // offset is from the item itself
-    // console.log(e.altKey);
-    // console.log(e.ctrlKey);
-    // console.log(e.shiftKey);
 
     // Post.all.sort((a, b) => a.post.title.localeCompare(b.post.title))
   }
