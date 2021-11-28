@@ -30,7 +30,7 @@
                 <option value="5">Redux</option>
             </select>
             <br><br>
-            <input id='create-button' type="submit" name="submit" value="Create Post" class="submit">
+            <input id='create-post-button' type="submit" name="submit" value="Create Post" class="submit">
         </form>
 
     </div>
@@ -38,10 +38,26 @@
     <br>
     <div id="posts">
         <h2>All Community Posts: </h2>
-        <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit">
-        <br>
-        <br>
-        <div id="post-container">
+        <div id="posts-container">
+            <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
+            <div className="sort-filter-search">
+                <button id='sort-button' class="btn btn-block" type="submit" name="sort-button" value="Sort by Title">Sort by Title</button>
+                <br/><br/>
+                <Label id="filter-by-category">Filter by Category: </Label>
+                <select type="select" id="filter-category" name="filterCategory">
+                    <option value="All Posts">All Posts</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="React">React</option>
+                    <option value="Redux">Redux</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Rails">Rails</option>
+                </select>
+                <br/><br/>
+                <Label id="search-by-keyword">Search by Keyword: </Label>
+                <input id="search-input" type="text" name="keyword" placeholder="Enter keyword..."/>
+            <br>
+            <div id="post-container">
+            </div>
         </div>
     </div>
     <br>

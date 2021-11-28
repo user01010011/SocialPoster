@@ -8,7 +8,7 @@ class Post {
       Post.all.push(this)
       console.log(this);
     }
-  
+
     renderPostCard() {
       return `
         <div class="col-md-4">
