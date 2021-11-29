@@ -6,22 +6,23 @@ class Post {
       this.media_url = post.attributes.media_url
       this.category = post.attributes.category
       Post.all.push(this)
-      console.log(this);
+      console.log(this)
     }
 
     renderPostCard() {
       return `
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <div class="card-body">
+            <div class="card-body" key=${this.id}>
               <h3 class="card-title">${this.title}</h3>
               <p class="card-content">${this.content}</p>
               <p class="card-url">${this.media_url}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <input type="button" class="view-button" value="View"/>
-                  <input type="button" class="like-button" value="Like "/>
-                </div>
+                <button type="button" class="view-button" id="view-button" value="View">View</button>
+                <button type="button" class="like-button" id="like-button" value="Like">Like</button>
+                <button type="button" class="delete-button" id="delete-button" value="Delete">Delete</button>
+                </div><br/>
                 <small class="card-category">Category:${this.category.category_name}</small>
                 <div class="post-footer-line post-footer-line-3"/>
                </div>

@@ -15,11 +15,11 @@
         <br>
         <form id="create-post-form">
             <h2>Create a Post! </h2>
-            Title:<br><input id='input-title' type="text" name="title" value=""
+            Title:<br><input id='input-title' type="text" name="title"
             placeholder="Enter your post title..." class="input-text"><br><br>
-            Content:<br><textarea id='input-content' name="content" cols="50" rows="10" value="" 
+            Content:<br><textarea id='input-content' name="content" cols="50" rows="10"
             placeholder="Enter your post content..."></textarea><br><br>
-            Media attachment (optional):<br><input id='input-url' type="text" name="media" value=""
+            Media attachment (optional):<br><input id='input-url' type="text" name="media"
             placeholder="Enter your media url..." class="input-text">
             <br><br>
             <select id="input-category" name="category">
@@ -37,24 +37,24 @@
     <br>
     <br>
     <div id="posts">
-        <h2>All Community Posts: </h2>
+        <h2> All Community Posts: </h2>
+        <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
         <div id="posts-container">
-            <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
-            <div className="sort-filter-search">
-                <button id='sort-button' class="btn btn-block" type="submit" name="sort-button" value="Sort by Title">Sort by Title</button>
-                <br/><br/>
-                <Label id="filter-by-category">Filter by Category: </Label>
-                <select type="select" id="filter-category" name="filterCategory">
-                    <option value="All Posts">All Posts</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="React">React</option>
-                    <option value="Redux">Redux</option>
-                    <option value="Ruby">Ruby</option>
-                    <option value="Rails">Rails</option>
-                </select>
-                <br/><br/>
-                <Label id="search-by-keyword">Search by Keyword: </Label>
-                <input id="search-input" type="text" name="keyword" placeholder="Enter keyword..."/>
+        <div className="sort-filter-search">
+            <button id='sort-button' class="btn btn-block" type="submit" name="sort-button" value="Sort by Title">Sort by Title</button>
+            <br/><br/>
+            <Label id="filter-by-category">Filter by Category: </Label>
+            <select type="select" id="filter-category" name="filterCategory">
+                <option value="All Posts">All Posts</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="React">React</option>
+                <option value="Redux">Redux</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Rails">Rails</option>
+            </select>
+            <br/><br/>
+            <Label id="search-by-keyword">Search by Keyword: </Label>
+            <input id="search-input" type="text" name="keyword" placeholder="Enter keyword..."/>
             <br>
             <div id="post-container">
             </div>

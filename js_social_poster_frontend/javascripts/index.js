@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // sortButton.addEventListener('click', function () {
   //   console.log('you clicked sort button!')
   // })
-
-  const sortButton = document.getElementById('sort-button')
-  sortButton.addEventListener('click', sortPost); 
-  function sortPost(e) {
+ 
+  const sortButton = document.querySelector('#sort-button')
+  sortButton.addEventListener('click', sortPosts); 
+ 
+  function sortPosts() {
     console.log('you clicked sort button!')
-
-    // Post.all.sort((a, b) => a.post.title.localeCompare(b.post.title))
+    // allPosts.sort((a, b) => a.post.title.localeCompare(b.post.title))
   }
 
-  const filterCategory = document.getElementById('filter-category')
+  const filterCategory = document.querySelector('#filter-category')
   filterCategory.addEventListener('change', filterPosts);
   function filterPosts() {
     console.log('you selected a filter!')
@@ -39,13 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // })
     }
 
-    const searchInput = document.getElementById('search-input')
+    const searchInput = document.querySelector('#search-input')
     searchInput.addEventListener('change', searchPosts);
     function searchPosts(){
       console.log('you entered a search!')
+      // let text = e.target.value.toLowerCase(); 
+      // let posts = document.getElementsById('post-card-container')
     }
      // let text = e.target.value.toLowerCase();
+
+     const deleteBtns = document.getElementsByClassName('delete-button')
+    //  let deleteButtons = [...deleteBtns]
+     deleteBtns.addEventListener('click', deletePost);
+     function deletePost(){
+       console.log('you clicked the delete button!')
+      //  let postCard = document.querySelector('#card-body')
+      //  postCard.remove()
+     }
 })  
+
+// convert HTML collection to 
 
 function getPosts() {
   fetch(endPoint)
@@ -71,6 +84,13 @@ function createFormHandler(e) {
   const mediaInput = document.querySelector('#input-url').value
   const categoryId = parseInt(document.querySelector('#input-category').value)
   console.log('you went past the form info!')
+  if (titleInput.value === '' || contentInput.value === ''){
+    // alert('Please enter all required fields'); 
+    msg.innerHTML = 'Please enter all fields';
+    setTimeout(() => msg.remove(), 3000);
+  } else {
+    console.log('success');
+  }
   postFetch(titleInput, contentInput, mediaInput, categoryId)
 }
 
@@ -95,7 +115,6 @@ function postFetch(title, content, media_url, category_id) {
     document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
   })
 }
-
 
 // function deletePost(e) {
 //   e.preventDefault()
