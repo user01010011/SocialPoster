@@ -45,17 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('you entered a search!')
       // let text = e.target.value.toLowerCase(); 
       // let posts = document.getElementsById('post-card-container')
+      let searchResults = posts; 
+      if (searchInput !== ""){
+        searchResults = Posts.all.filter((data) => {
+          if ( 
+            data.title.toLowerCase().includes(searchInput.toLowerCase())||
+            data.content.toLowerCase().includes(searchInput.toLowerCase())
+          ) {
+            return data; 
+          }
+        }); 
+      }
+
+      searchResults = searchResults.map((post) => {
+        return (
+          renderPostCard()
+        )
+      })
     }
      // let text = e.target.value.toLowerCase();
 
-     const deleteBtns = document.getElementsByClassName('delete-button')
-    //  let deleteButtons = [...deleteBtns]
-     deleteBtns.addEventListener('click', deletePost);
-     function deletePost(){
-       console.log('you clicked the delete button!')
-      //  let postCard = document.querySelector('#card-body')
-      //  postCard.remove()
-     }
+    //  const deleteBtns = document.getElementsByClassName('delete-button')
+    // //  let deleteButtons = [...deleteBtns]
+    //  deleteBtns.addEventListener('click', deletePost);
+    //  function deletePost(){
+    //    console.log('you clicked the delete button!')
+    //   //  let postCard = document.querySelector('#card-body')
+    //   //  postCard.remove()
+    //  }
 })  
 
 // convert HTML collection to 
