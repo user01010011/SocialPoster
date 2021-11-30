@@ -45,12 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('you entered a search!')
       // let text = e.target.value.toLowerCase(); 
       // let posts = document.getElementsById('post-card-container')
+      const posts = Post.all 
       let searchResults = posts; 
-      if (searchInput !== ""){
-        searchResults = Posts.all.filter((data) => {
+      if (searchInput.value !== ""){
+        searchResults = posts.filter((data) => {
           if ( 
-            data.title.toLowerCase().includes(searchInput.toLowerCase())||
-            data.content.toLowerCase().includes(searchInput.toLowerCase())
+            data.title.toLowerCase().includes(searchInput.value.toLowerCase())||
+            data.content.toLowerCase().includes(searchInput.value.toLowerCase())
           ) {
             return data; 
           }
@@ -59,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       searchResults = searchResults.map((post) => {
         return (
-          renderPostCard()
+          console.log("you got to render post(s)!")
+          // post.renderPostCard()
         )
       })
     }
