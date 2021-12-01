@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
   filterCategory.addEventListener('change', filterPosts);
   function filterPosts() {
     console.log('you selected a filter!')
+    const posts = Post.all 
+    let filteredPosts = posts.filter((data) => {
+      if (post.category_name === "") return data; 
+      else if (data.category_name.includes(post.category_name)) {
+        return data;
+      }
+    })
+    .map((data) => {
+      return (
+        post.renderPostCard()
+      )
+    })
     // const filteredPost = posts.filter((data) => {
     //   if (post.attributes.category === "") return data;
     // })
@@ -37,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     renderPostCard()
     //   )
     // })
-    }
+  }
 
     const searchInput = document.querySelector('#search-input')
     searchInput.addEventListener('change', searchPosts);
@@ -46,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // let text = e.target.value.toLowerCase(); 
       // let posts = document.getElementsById('post-card-container')
       const posts = Post.all 
-      let searchResults = posts; 
       if (searchInput.value !== ""){
         searchResults = posts.filter((data) => {
           if ( 
@@ -60,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       searchResults = searchResults.map((post) => {
         return (
-          console.log("you got to render post(s)!")
-          // post.renderPostCard()
+          // console.log("you got to render post(s)!")
+          renderPostCard()
         )
-      })
+      });
     }
      // let text = e.target.value.toLowerCase();
 
