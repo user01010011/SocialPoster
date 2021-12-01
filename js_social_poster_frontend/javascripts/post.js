@@ -19,9 +19,9 @@ class Post {
               <p class="card-url">${this.media_url}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                <button type="button" class="view-button" id="view-button" value="View" onClick="editPost()">View</button>
-                <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like</button>
-                <button type="button" class="delete-button" id="delete-button" value="Delete" onClick="deletePost()">Delete</button>
+                <button type="button" class="view-button" id="view-button" value="View" onClick="editPost()">View 👀</button>
+                <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
+                <button type="button" class="delete-button" id="delete-button" value="Delete" onClick="deletePost()">Delete 🚫</button>
                 </div><br/>
                 <small class="card-category">Category:${this.category.category_name}</small>
                 <div class="post-footer-line post-footer-line-3"/>
@@ -41,6 +41,7 @@ class Post {
 
   function likePost() {
     console.log('you clicked like button! :)')
+
   }
 
   function editPost() {
