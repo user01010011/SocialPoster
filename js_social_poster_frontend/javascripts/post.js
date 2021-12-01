@@ -37,20 +37,24 @@ class Post {
 
   function viewPost() {
     console.log('you clicked view button! :)')
+    // render post including all of its properties
 
   }
   
   function likePost() {
     console.log('you clicked like button! :)')
+    // toggle Like ♡ & Unlike ❤️
 
   }
   
   function editPost() {
     console.log('you clicked edit post!')
+    // toggle empty form + submit input value & current value
   }
  
   function deletePost() {
     console.log('you clicked delete button!')
+    // id the current post then .remove()
 
   }
 
