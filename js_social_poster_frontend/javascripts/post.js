@@ -42,6 +42,7 @@ class Post {
             <br/>
               <button type="button" class="comment-button" id="comment-button" value="Comment" onClick="commentPost()">Comment 💬</button>
               <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
+              <button type="button" class="share-button" id="share-button" value="Share" onClick="sharePost()">Share ✉️</button>
               <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
               <button type="button" class="delete-button" id="delete-button" value="Delete" onClick={deletePost(event)}>Delete 🚫</button>
               <div class="post-footer-line post-footer-line-3"/>
@@ -84,6 +85,11 @@ class Post {
     }
   }
   
+  function sharePost() {
+    console.log('you clicked share post!')
+    // add external links to email, twitter, facebook, wechat, whatsapp
+  }
+
   function editPost() {
     console.log('you clicked edit post!')
     // toggle empty form + submit input value & current value
