@@ -35,6 +35,10 @@ class Post {
     }
   }
 
+  // let posts = document.getElementsByClassName('card-body')
+  // posts = Array.from(posts)
+  let allPosts = Array.from(document.getElementsByClassName("card-body"))
+
   function viewPost() {
     console.log('you clicked view button! :)')
     // render post including all of its properties
@@ -78,8 +82,8 @@ class Post {
       })
       .then(resp => resp.json())
       .then(posts => {
-        Post.all = Post.all.filter(post => post.id !== this.post);
-        Post.displayAll();
+        posts = Post.all.filter(post => post.id !== this.post);
+        posts.displayAll();
       })
 
   }
