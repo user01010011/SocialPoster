@@ -40,11 +40,12 @@ class Post {
             <p class="card-url">${this.media_url}</p>
             <small class="card-category">Category:${this.category.category_name}</small> | <small class="card-id">Post id: ${this.id}</small>
             <br/>
-              <button type="button" class="view-button" id="view-button" value="View" onClick="viewPost()">View 👀</button>
+              <button type="button" class="comment-button" id="comment-button" value="Comment" onClick="commentPost()">Comment 💬</button>
               <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
               <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
               <button type="button" class="delete-button" id="delete-button" value="Delete" onClick={deletePost(event)}>Delete 🚫</button>
               <div class="post-footer-line post-footer-line-3"/>
+              <br/>
              </div>
             </div>
           </div>
@@ -59,8 +60,8 @@ class Post {
   // let posts = Array.from(postsHTML)
   const postList = document.getElementById('post-container')
 
-  function viewPost() {
-    console.log('you clicked view button! :)')
+  function commentPost() {
+    console.log('you clicked comment button! :)')
     // render post including all of its properties
 
   }
@@ -95,8 +96,6 @@ class Post {
       console.log(postToDelete)
       postList.removeChild(postToDelete)
     }
-    
-
     // let postId = this.id
     // id the current post then .remove()
     // const postToDelete = document.getElementsByClassName('card-body').item('${this.id}');
