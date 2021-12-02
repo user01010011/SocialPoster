@@ -37,7 +37,7 @@ class Post {
 
   // let posts = document.getElementsByClassName('card-body')
   // posts = Array.from(posts)
-  let allPosts = Array.from(document.getElementsByClassName("card-body"))
+  // let allPosts = Array.from(document.getElementsByClassName("card-body"))
 
   function viewPost() {
     console.log('you clicked view button! :)')
