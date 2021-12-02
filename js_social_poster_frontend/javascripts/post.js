@@ -43,8 +43,20 @@ class Post {
   
   function likePost() {
     console.log('you clicked like button! :)')
+    // x.classList.toggle("Unlike ❤️")
     // toggle Like ♡ & Unlike ❤️
-
+    // Add like and unlike counter
+    // const like = document.querySelector(".like-button"); 
+    //   like.classList.toggle("Unlike ❤️"); 
+    const emptyHeart = '\u2661'; 
+    const fullHeart = '\u2665'; 
+    const likeButton = document.querySelector('like-button');
+    const like = likeButton.textContent;
+    if (like == emptyHeart) {
+      this.likeButton.textContent = fullHeart; 
+    } else {
+      this.likeButton.textContent = emptyHeart;
+    }
   }
   
   function editPost() {
@@ -53,8 +65,22 @@ class Post {
   }
  
   function deletePost() {
-    console.log('you clicked delete button!')
+    console.log('you clicked delete button!'); 
     // id the current post then .remove()
+    // const postToDelete = document.getElementsByClassName('card-body').item('${this.id}');
+    // const posts = document.getElementsByClassName('card-body')
+      fetch(`http://localhost:3000/posts/' + ${this.id}`, {
+        method: 'delete',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(resp => resp.json())
+      .then(posts => {
+        Post.all = Post.all.filter(post => post.id !== this.post);
+        Post.displayAll();
+      })
 
   }
 
