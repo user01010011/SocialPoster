@@ -10,34 +10,54 @@ class Post {
     }
 
     renderPostCard() {
+      // return `
+      //   <div class="col-md-4">
+      //     <div class="card mb-4 shadow-sm">
+      //       <div class="card-body" key=${this.id}>
+      //         <h3 class="card-title">${this.title}</h3>
+      //         <p class="card-content">${this.content}</p>
+      //         <p class="card-url">${this.media_url}</p>
+      //         <div class="d-flex justify-content-between align-items-center">
+      //           <div class="btn-group">
+      //           <button type="button" class="view-button" id="view-button" value="View" onClick="viewPost()">View 👀</button>
+      //           <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
+      //           <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
+      //           <button type="button" class="delete-button" id="delete-button" value="Delete" onClick="deletePost()">Delete 🚫</button>
+      //           </div><br/>
+      //           <small class="card-category">Category:${this.category.category_name}</small>
+      //           <div class="post-footer-line post-footer-line-3"/>
+      //          </div>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // `
+
       return `
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-body" key=${this.id}>
-              <h3 class="card-title">${this.title}</h3>
-              <p class="card-content">${this.content}</p>
-              <p class="card-url">${this.media_url}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                <button type="button" class="view-button" id="view-button" value="View" onClick="viewPost()">View 👀</button>
-                <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
-                <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
-                <button type="button" class="delete-button" id="delete-button" value="Delete" onClick="deletePost()">Delete 🚫</button>
-                </div><br/>
-                <small class="card-category">Category:${this.category.category_name}</small>
-                <div class="post-footer-line post-footer-line-3"/>
-               </div>
-              </div>
+          <div class="card-body" key=${this.id}>
+            <h3 class="card-title">${this.title}</h3>
+            <p class="card-content">${this.content}</p>
+            <p class="card-url">${this.media_url}</p>
+            <small class="card-category">Category:${this.category.category_name}</small> | <small class="card-id">Post id: ${this.id}</small>
+            <br/>
+              <button type="button" class="view-button" id="view-button" value="View" onClick="viewPost()">View 👀</button>
+              <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
+              <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
+              <button type="button" class="delete-button" id="delete-button" value="Delete" onClick={deletePost(event)}>Delete 🚫</button>
+              <div class="post-footer-line post-footer-line-3"/>
+             </div>
             </div>
           </div>
-        </div>
-      `
+    `
     }
   }
 
   // let posts = document.getElementsByClassName('card-body')
   // posts = Array.from(posts)
   // let allPosts = Array.from(document.getElementsByClassName("card-body"))
+  // let postsHTML = document.getElementsByClassName('card-body')
+  // let posts = Array.from(postsHTML)
+  const postList = document.getElementById('post-container')
 
   function viewPost() {
     console.log('you clicked view button! :)')
@@ -68,23 +88,33 @@ class Post {
     // toggle empty form + submit input value & current value
   }
  
-  function deletePost() {
-    console.log('you clicked delete button!'); 
+  function deletePost(event) {
+    console.log('you clicked delete button!');     
+    if (confirm('Are you sure you want to delete this post?')) {
+      const postToDelete = event.target.parentElement;
+      console.log(postToDelete)
+      postList.removeChild(postToDelete)
+    }
+    
+
+    // let postId = this.id
     // id the current post then .remove()
     // const postToDelete = document.getElementsByClassName('card-body').item('${this.id}');
     // const posts = document.getElementsByClassName('card-body')
-      fetch(`http://localhost:3000/posts/' + ${this.id}`, {
-        method: 'delete',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(resp => resp.json())
-      .then(posts => {
-        posts = Post.all.filter(post => post.id !== this.post);
-        posts.displayAll();
-      })
+      // fetch(`http://localhost:3000/posts/ + ${this.id}`, {
+      //   method: 'DELETE',
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // .then(resp => resp.json())
+      // .then(posts => {
+      //   posts = Post.all.filter(post => post.id !== this.post);
+      //   posts.displayAll();
+      //   // posts = Post.all.filter(post => post.id !== this.post);
+      //   // posts.displayAll();
+      // })
 
   }
 

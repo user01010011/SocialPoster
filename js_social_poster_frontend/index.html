@@ -39,7 +39,7 @@
     <div id="posts">
         <h2> All Community Posts 🌎: </h2>
         <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
-        <div id="posts-container">
+        <div className="posts-container" id="posts-container">
         <div className="sort-filter-search">
             <button id='sort-button' class="btn btn-block" type="submit" name="sort-button" value="Sort by Title">Sort by Title 📚</button>
             <br/><br/>
@@ -56,7 +56,9 @@
             <Label id="search-by-keyword">Search by Keyword 🔎: </Label>
             <input id="search-input" type="text" name="keyword" placeholder="Enter keyword..."/>
             <br>
-            <div id="post-container">
+            <div id="post-list">
+                <div id="post-container">
+                </div>
             </div>
         </div>
     </div>
