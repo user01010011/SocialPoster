@@ -22,25 +22,64 @@ document.addEventListener('DOMContentLoaded', () => {
  
   function sortPosts() {
     console.log('you clicked sort button!')
-    // allPosts.sort((a, b) => a.post.title.localeCompare(b.post.title))
+    let postTitleHTML = document.getElementsByClassName('card-title')
+    console.log(postTitleHTML)
+    // let postTitle = Array.from(postTitleHTML)
+    // console.log(postTitle)
+    // const titles = postTitle.firstChild.textContent
+    // console.log(titles)
+    Array.from(postTitleHTML).forEach(function(title){
+      let titleName = title.firstChild.textContent;
+      console.log(titleName)
+    });
+    // let toSort = document.getElementById('card-body').children;
+    // toSort = Array.prototype.slice.call(toSort, 0);
+    // toSort.sort()
+
+
+    // let sortedPosts = titleName.sort((a, b) => a.titleName.localeCompare(b.titleName))
+    // // allPosts.sort((a, b) => a.post.title.localeCompare(b.post.title))
+    // return sortedPosts
   }
 
   const filterCategory = document.querySelector('#filter-category')
   filterCategory.addEventListener('change', filterPosts);
-  function filterPosts() {
-    console.log('you selected a filter!')
-    const posts = Post.all 
-    let filteredPosts = posts.filter((data) => {
-      if (post.category_name === "") return data; 
-      else if (data.category_name.includes(post.category_name)) {
-        return data;
-      }
-    })
-    .map((data) => {
-      return (
-        post.renderPostCard()
-      )
-    })
+  function filterPosts(e) {
+    console.log('you selected a filter!');
+    let selectedCategory = e.target.value;
+    console.log(selectedCategory);
+
+    let postCategoryHTML = document.getElementsByClassName('card-category');
+    console.log(postCategoryHTML);
+    Array.from(postCategoryHTML).forEach(function(postCategory){
+      let categoryName = postCategory.firstChild.textContent;
+      // if(categoryName === selectedCategory){
+      //   const postsToFilter = postCategoryHTML.parentElement
+      //   post.style.display = 'block';
+      // } else {
+      //   post.style.display = 'none';
+      // }
+    });
+  }
+    
+
+
+    // Array.from(postTitleHTML).forEach(function(title){
+    //   let titleName = title.firstChild.textContent;
+    //   console.log(titleName)
+    // });
+    // const posts = Post.all 
+    // let filteredPosts = posts.filter((data) => {
+    //   if (post.category_name === "") return data; 
+    //   else if (data.category_name.includes(post.category_name)) {
+    //     return data;
+    //   }
+    // })
+    // .map((data) => {
+    //   return (
+    //     post.renderPostCard()
+    //   )
+    // })
     // const filteredPost = posts.filter((data) => {
     //   if (post.attributes.category === "") return data;
     // })
@@ -49,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     renderPostCard()
     //   )
     // })
-  }
+  // }
 
     const searchInput = document.querySelector('#search-input')
     searchInput.addEventListener('change', searchPosts);
@@ -86,9 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //   //  let postCard = document.querySelector('#card-body')
     //   //  postCard.remove()
     //  }
-})  
 
-// convert HTML collection to 
 
 function getPosts() {
   fetch(endPoint)
@@ -173,4 +210,4 @@ function postFetch(title, content, media_url, category_id) {
 //       Post.displayAll();
 //     })
 //   }
-
+})

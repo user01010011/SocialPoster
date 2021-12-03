@@ -41,7 +41,7 @@ class Post {
             <small class="card-category">Category:${this.category.category_name}</small> | <small class="card-id">Post id: ${this.id}</small>
             <br/>
               <button type="button" class="comment-button" id="comment-button" value="Comment" onClick="commentPost()">Comment 💬</button>
-              <button type="button" class="like-button" id="like-button" value="Like" onClick="likePost()">Like ♡</button>
+              <button type="button" class="like-button" id="like-button" value="Like ♡" onClick="likePost()">Like ♡</button>
               <button type="button" class="share-button" id="share-button" value="Share" onClick="sharePost()">Share ✉️</button>
               <button type="button" class="view-button" id="edit-button" value="Edit" onClick="editPost()">Edit ✍🏻</button>
               <button type="button" class="delete-button" id="delete-button" value="Delete" onClick={deletePost(event)}>Delete 🚫</button>
@@ -69,13 +69,16 @@ class Post {
   
   function likePost() {
     console.log('you clicked like button! :)')
+    // function likeCounter() {
+    //   setCounter(counter + 1); 
+    // }
     // x.classList.toggle("Unlike ❤️")
     // toggle Like ♡ & Unlike ❤️
     // Add like and unlike counter
     // const like = document.querySelector(".like-button"); 
     //   like.classList.toggle("Unlike ❤️"); 
-    const emptyHeart = '\u2661'; 
-    const fullHeart = '\u2665'; 
+    const emptyHeart = '♡'; 
+    const fullHeart = '❤️'; 
     const likeButton = document.querySelector('like-button');
     const like = likeButton.textContent;
     if (like == emptyHeart) {
@@ -89,6 +92,9 @@ class Post {
     console.log('you clicked share post!')
     // add external links to email, twitter, facebook, wechat, whatsapp
   }
+
+  // After adding user classes, logged in users can share other people's posts.
+  // logged in users can also comment, like, share, edit delete their own posts.
 
   function editPost() {
     console.log('you clicked edit post!')
