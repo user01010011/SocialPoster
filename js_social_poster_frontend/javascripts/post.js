@@ -7,6 +7,7 @@ class Post {
       this.category = post.attributes.category
       Post.all.push(this)
       console.log(this)
+      
     }
 
     renderPostCard() {
@@ -60,6 +61,11 @@ class Post {
   // let postsHTML = document.getElementsByClassName('card-body')
   // let posts = Array.from(postsHTML)
   const postList = document.getElementById('post-container')
+
+  // set like and comment counter, so it shows how many comments and likes
+  // comment will open a form, will need to have a content box, submit button 
+  // Should each post have its own link? So people can view the post and threads? Check out Reddit, HackerNews, etc.
+  // toggle Like & Unlike, and counter +1 & -1.
 
   function commentPost() {
     console.log('you clicked comment button! :)')
