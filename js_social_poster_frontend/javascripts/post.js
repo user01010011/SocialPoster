@@ -36,7 +36,7 @@ class Post {
 
       return `
           <div class="card-body" key=${this.id}>
-            <h3 class="card-title">${this.title}</h3>
+            <a href="" class="card-title">${this.title}</a>
             <p class="card-content">${this.content}</p>
             <p class="card-url">${this.media_url}</p>
             <small class="card-category">Category:${this.category.category_name}</small> | <small class="card-id">Post id: ${this.id}</small>
@@ -50,6 +50,7 @@ class Post {
               <br/>
           </div>
       `
+
     }
   }
 
@@ -103,6 +104,15 @@ class Post {
   function editPost() {
     console.log('you clicked edit post!')
     // toggle empty form + submit input value & current value
+    main.innerHTML = ""
+    // return (
+    //   <form>
+    //     <label>Title</label>
+    //     <input></input>
+    //     <button>Edit</button>
+    //   </form>
+    // )
+
   }
  
   function deletePost(event) {

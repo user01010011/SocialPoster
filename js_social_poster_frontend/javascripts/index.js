@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
  
   function sortPosts() {
     console.log('you clicked sort button!')
-    const postTitleHTML = document.getElementsByClassName('card-title')
+    let postTitleHTML = document.getElementsByClassName('card-title')
     console.log(postTitleHTML)
     // To Convert HTML collection to Array (1st way): 
-    const postTitle = Array.from(postTitleHTML)
+    let postTitle = Array.from(postTitleHTML)
     console.log(postTitle)
     // To Convert HTML collection to Array (2nd way):
     // const postTitle = Array.prototype.slice.call(postTitleHTML)
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // const postsToSort = document.getElementsByClassName('card-body')
     // console.log(postsToSort)
 
-    // let sortedTitles = postTitle.sort((a, b) => a.post.title.localeCompare(b.post.title))
-    // console.log(sortedTitles)
+    const sortedTitles = postTitle.sort((a, b) => a.postTitle.localeCompare(b.postTitle))
+    console.log(sortedTitles)
 
 
     // const titles = postTitle.firstChild.textContent
@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //   }
     // }
 
-
   }
 
   const filterCategory = document.querySelector('#filter-category')
@@ -106,8 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
     
-
-
     // Array.from(postTitleHTML).forEach(function(title){
     //   let titleName = title.firstChild.textContent;
     //   console.log(titleName)
@@ -153,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       searchResults()
-      
+
       // searchResults = searchResults.map((data) => {
       //   return (
       //     // console.log("you got to render post(s)!")
