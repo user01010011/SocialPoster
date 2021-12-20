@@ -22,24 +22,68 @@ document.addEventListener('DOMContentLoaded', () => {
  
   function sortPosts() {
     console.log('you clicked sort button!')
-    let postTitleHTML = document.getElementsByClassName('card-title')
+    const postTitleHTML = document.getElementsByClassName('card-title')
     console.log(postTitleHTML)
-    // let postTitle = Array.from(postTitleHTML)
+    // To Convert HTML collection to Array (1st way): 
+    const postTitle = Array.from(postTitleHTML)
+    console.log(postTitle)
+    // To Convert HTML collection to Array (2nd way):
+    // const postTitle = Array.prototype.slice.call(postTitleHTML)
     // console.log(postTitle)
+
+    // const postsToSort = document.getElementsByClassName('card-body')
+    // console.log(postsToSort)
+
+    // let sortedTitles = postTitle.sort((a, b) => a.post.title.localeCompare(b.post.title))
+    // console.log(sortedTitles)
+
+
     // const titles = postTitle.firstChild.textContent
     // console.log(titles)
-    Array.from(postTitleHTML).forEach(function(title){
-      let titleName = title.firstChild.textContent;
-      console.log(titleName)
-    });
+    // Array.from(postTitleHTML).forEach(function(title){
+    //   let titleName = title.firstChild.textContent;
+    //   console.log(titleName)
+    // });
     // let toSort = document.getElementById('card-body').children;
     // toSort = Array.prototype.slice.call(toSort, 0);
     // toSort.sort()
-
-
     // let sortedPosts = titleName.sort((a, b) => a.titleName.localeCompare(b.titleName))
     // // allPosts.sort((a, b) => a.post.title.localeCompare(b.post.title))
     // return sortedPosts
+    // const list, i, switching, b, shouldSwitch, dir, switchcount = 0; 
+    // list = document.getElementById("post-container"); 
+    // switching = true; 
+    // dir = "asc"; 
+    // while (switching) {
+    //   switching = false; 
+    //   b = list.getElementsByTagName("card-title");
+    //   for (i = 0; i < (b.length - 1); i++) {
+    //     shouldSwitch = false; 
+    //     if (dir == "asc") {
+    //       if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+    //         shouldSwitch = true; 
+    //         break; 
+    //       }
+    //     } else if (dir == "desc") {
+    //       if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
+    //         shouldSwitch = true; 
+    //         break; 
+    //       }
+    //     }
+    //   }
+    //   if (shouldSwitch) {
+    //     b[i].parentNode.insertBefore(b[i + 1], b[i]); 
+    //     switching = true; 
+    //     switchcount ++; 
+    //   } else {
+    //     if (switchcount == 0 && dir == "asc") {
+    //       dir = "desc"; 
+    //       switching = true; 
+    //     }
+    //   }
+    // }
+
+
   }
 
   const filterCategory = document.querySelector('#filter-category')
@@ -108,12 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }); 
       }
 
-      searchResults = searchResults.map((post) => {
-        return (
-          // console.log("you got to render post(s)!")
-          renderPostCard()
-        )
-      });
+      searchResults()
+      
+      // searchResults = searchResults.map((data) => {
+      //   return (
+      //     // console.log("you got to render post(s)!")
+      //     renderPostCard()
+      //   )
+      // });
+
     }
      // let text = e.target.value.toLowerCase();
 
@@ -153,7 +200,7 @@ function createFormHandler(e) {
   console.log('you went past the form info!')
   if (titleInput.value === '' || contentInput.value === ''){
     // alert('Please enter all required fields'); 
-    msg.innerHTML = 'Please enter all fields';
+    msg.textContent = 'Please enter all fields';
     setTimeout(() => msg.remove(), 3000);
   } else {
     console.log('success');
@@ -179,7 +226,7 @@ function postFetch(title, content, media_url, category_id) {
     // render JSON response
     let newPost = new Post(post, post.attributes)
     console.log('you got to json!')
-    document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
+    document.querySelector('#post-container').textContent += newPost.renderPostCard()
   })
 }
 

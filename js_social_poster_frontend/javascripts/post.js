@@ -48,10 +48,8 @@ class Post {
               <button type="button" class="delete-button" id="delete-button" value="Delete" onClick={deletePost(event)}>Delete 🚫</button>
               <div class="post-footer-line post-footer-line-3"/>
               <br/>
-             </div>
-            </div>
           </div>
-    `
+      `
     }
   }
 
