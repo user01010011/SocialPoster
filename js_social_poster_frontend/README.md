@@ -2,7 +2,7 @@
 
 # JS Social Poster
 
-JS Social Poster is a web application that helps students to learn technical skills for their dream jobs through relevant courses. 
+JS Social Poster is a web application that lets students post and share technical content.
 
 This is the frontend of the JS Social Poster web app.
 See the backend here: https://github.com/user01010011/js_social_poster_backend
