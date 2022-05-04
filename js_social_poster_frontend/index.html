@@ -9,63 +9,53 @@
 </head>
 
 <body>
-    <h1>Social Poster 👩🏻‍💻</h1>
-    <br>
-    <div id="form-container">
-        <br>
-        <form id="create-post-form">
+    <div class="App">
+        <h1>Social Poster 👩🏻‍💻</h1>
+        <div class="form-container" id="form-container">
             <h2>Create a Post! ⌨️</h2>
-            Title:<br><input id='input-title' type="text" name="title"
-            placeholder="Enter your post title..." class="input-text"><br><br>
-            Content:<br><textarea id='input-content' name="content" cols="50" rows="10"
-            placeholder="Enter your post content..."></textarea><br><br>
-            Media attachment (optional):<br><input id='input-url' type="text" name="media"
-            placeholder="Enter your media url..." class="input-text">
-            <br><br>
-            <select id="input-category" name="category">
-                <option value="1">JavaScript</option>
-                <option value="2">Rails</option>
-                <option value="3">Ruby</option>
-                <option value="4">React</option>
-                <option value="5">Redux</option>
-            </select>
-            <br><br>
-            <input id='create-post-button' type="submit" name="submit" value="Create Post" class="submit">
-        </form>
-
-    </div>
-    <br>
-    <br>
-    <div id="posts">
-        <h2> All Community Posts 🌎: </h2>
-        <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
-        <div className="posts-container" id="posts-container">
-        <div className="sort-filter-search">
-            <button id='sort-button' class="btn btn-block" type="submit" name="sort-button" value="Sort by Title">Sort by Title 📚</button>
-            <br/><br/>
-            <Label id="filter-by-category">Filter by Category 🗂: </Label>
-            <select type="select" id="filter-category" name="filterCategory">
-                <option value="All Posts">All Posts</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="React">React</option>
-                <option value="Redux">Redux</option>
-                <option value="Ruby">Ruby</option>
-                <option value="Rails">Rails</option>
-            </select>
-            <br/><br/>
-            <Label id="search-by-keyword">Search by Keyword 🔎: </Label>
-            <input id="search-input" type="text" name="keyword" placeholder="Enter keyword..."/>
-            <br/><br/>
-            <div id="post-list">
-                <div id="post-container">
+            <form class="form" id="create-post-form">
+                <label class="form-label">Title:</label>
+                <input class="form-input" id='input-title' type="text" name="title" placeholder="Enter your post title...">
+                <label class="form-label">Content: </label>
+                <textarea class="form-input" id='input-content' name="content" cols="50" rows="10" placeholder="Enter your post content..."></textarea>
+                <label class="form-label">Media attachment (optional):</label>
+                <input class="form-input" id='input-url' type="text" name="media" placeholder="Enter your media url...">
+                <label class="form-label">Category: </label>
+                <select class="form-input" id="input-category" name="category">
+                    <option value="1">JavaScript</option>
+                    <option value="2">Rails</option>
+                    <option value="3">Ruby</option>
+                    <option value="4">React</option>
+                    <option value="5">Redux</option>
+                </select>
+                <button class="submit-button" id='create-post-button' type="submit">Create Post</button>
+            </form>
+        </div>
+        <div id="posts">
+            <h2> All Community Posts 🌎: </h2>
+            <!-- <input id='sort-button' type="submit" name="sort-button" value="Sort by Title" class="submit"> -->
+            <div id="posts-container">
+                <div class="search-container" id="search-container">
+                    <label class="label" value="Sort by Title">Sort by Title 📚</label>
+                    <button class='sort-button' id="sort-button" type="submit">Sort</button>
+                    <Label class="label">Filter by Category 🗂: </Label>
+                    <select class="input" id="filter-category" type="select">
+                        <option value="All Posts">All Posts</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="React">React</option>
+                        <option value="Redux">Redux</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Rails">Rails</option>
+                    </select>
+                    <Label class="label">Search by Keyword 🔎: </Label>
+                    <input class="input" type="text" name="keyword" placeholder="Enter keyword..."/>
+                    <div id="post-list">
+                        <div id="post-container">
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
-    <br>
-    <br>
-
-
     <script src="javascripts/post.js"></script>
     <script src="javascripts/index.js"></script>
     <!-- <script src="javascripts/v2/index2.js"></script> -->
@@ -73,10 +63,7 @@
 
     <!-- <script type="text/javascript" src="javascripts/index.js"></script> -->
 </body>
-<br>
-<br>
-<br>
-  <footer class="branding">
+  <footer class="branding" id="branding">
     <small>&copy; 2021 <strong>Social Poster, Inc.</strong> All rights reserved.</small>
   </footer>
 </html>

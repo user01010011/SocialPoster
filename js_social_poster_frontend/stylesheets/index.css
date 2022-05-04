@@ -1,194 +1,272 @@
 @media screen {
-    .wrapper {
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        width: auto;
-    }
-    .wrapper {
-        background: #fff;
-        -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-        box-shadow: 0 0 10px rgba(0,0,0,.3);
-        margin: 16px auto;
-        max-width: 960px;
-        padding: 2.25%; /* 18px / 800px */
-        width: 85%;
-      }
-    
-    .content, .sidebar {
-        float: none;
-        width: 100%;
-    }
-    
-    .card-title  {
-      font-size: 18px;
-    }
+  .wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: auto;
+  }
+  .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
 
-    .sidebar {
-        background: transparent;
-        border: none;
-        border-top: 2px solid #ccc;
-        padding: 0;
-    }
-
-    * {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
+  body, p, ol, ul, td {
+    font-family: roboto, arial, helvetica, sans-serif;
+  }
     
-    html, body {
-        height: 100%;
-        width: 100%;
-      }
-  
-    /* --- Welcome Page Styles --- */
-    body {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        padding-left: 30px;
-        padding-right: 30px;
-        align-content: center; 
-        font-family: roboto, sans-serif; 
-        background-color: white;
-        color: #333;
-        line-height: 18px;
-    }
-  
-    h1 {
-      font-size: 36px;
-      line-height: 54px;
-      font-family: sans-serif;
-    }
-  
-    /* h1 {
-        font-size: 24px;
-        line-height: 36px;
-        font-family: sans-serif;
-      } */
+  .App {
+    padding: 30px 60px; 
+  }
 
-    h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-    }
-/* 
-    h2 {
-        font-size: 18px;
-        line-height: 24px;
-    } */
+  .form-container {
+    display: flex; 
+    flex-direction: column; 
+    margin: 20px 0px; 
+  }
+
+  .form {
+    min-width: 300px; 
+    width: 450px; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 20px 0px; 
+  }
+
+  .form-label {
+    font-size: 16px;
+    font-weight: 600; 
+    margin-bottom: 5px; 
+  }
+
+  .form-input {
+    margin-bottom: 10px; 
+    font-size: 16px; 
+    padding: 5px; 
+  }
+
+  .submit-button {
+    margin-top: 10px; 
+    padding: 5px; 
+    font-size: 16px; 
+  }
+
+  .submit-button:hover {
+    font-weight: 600; 
+  }
+
+  .search-container {
+    display: flex; 
+    flex-direction: row; 
+    margin: 20px 0px; 
+  } 
+
+  .label {
+    font-size: 16px; 
+    margin-right: 10px; 
+  }
+  .input {
+    font-size: 16px; 
+    margin-right: 20px; 
+  }
+  .sort-button {
+    padding: 0px 5px; 
+    font-size: 16px; 
+    margin-right: 20px; 
+  }
+  .sort-button:hover {
+    font-weight: 600; 
+  }
+    
+  .branding {
+    border-top: 1px solid #ccc;
+    margin-top: 100px;
+    padding-top: 20px;
+  }
+  .content, .sidebar {
+      float: none;
+      width: 100%;
+  }
   
-    h3 {
-      font-size: 18px;
-      line-height: 36px;
-    }
-  
-    p {
-      margin-bottom: 18px;
-    }
-  
-    .main {
-      overflow: hidden;
-    }
-  
-    .content {
-      float: left;
-      width: 60%; /* 480px / 800px */
-    }
-  
-    .sidebar {
-      background: #eee;
-      border: 1px solid #ccc;
-      float: right;
-      padding: 2.08333333333%; /* 5px / 240px */
-      width: 30%; /* 240px / 800px */
-    }
-  
-    .sidebar ul {
-      font-size: 14px;
-    }
-  
-    .branding {
-      clear: both;
-    }
-  
-    footer.branding {
+  .card-title  {
+    font-size: 18px;
+  }
+
+  .sidebar {
+      background: transparent;
+      border: none;
       border-top: 2px solid #ccc;
-      margin-top: 20px;
-      padding-top: 20px;
+      padding: 0;
+  }
+
+  * {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
+  
+  html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+  /* --- Welcome Page Styles --- */
+  /* body {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      align-content: center; 
+      font-family: roboto, sans-serif; 
+      background-color: white;
+      color: #333;
+      line-height: 18px;
+  } */
+
+  /* h1 {
+    font-size: 36px;
+    line-height: 54px;
+    font-family: sans-serif;
+  }
+  */
+  /* h1 {
+      font-size: 24px;
+      line-height: 36px;
+      font-family: sans-serif;
+    } */
+
+  /* h2 {
+  border-bottom: 2px solid #ccc;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+  } */
+/* 
+  h2 {
+      font-size: 18px;
+      line-height: 24px;
+  } */
+
+  /* h3 {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .main {
+    overflow: hidden;
+  }
+  */
+  /* .content {
+    float: left;
+    width: 60%; 
+  }
+  */
+  /* .sidebar {
+    background: #eee;
+    border: 1px solid #ccc;
+    float: right;
+    padding: 2.08333333333%; 
+    width: 30%; 
+  }
+  */
+  /* .sidebar ul {
+    font-size: 14px;
+  } */
+
+  /* .branding {
+    clear: both;
+  }
+
+  footer.branding {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
 }
 
 body {
-    background-color: #fff;
-    color: #333;
-    margin: 33px; }
-  
-  body, p, ol, ul, td {
-    font-family: roboto, arial, helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 18px; }
-  
-  pre {
-    background-color: #eee;
-    padding: 10px;
-    font-size: 11px; }
-  
-  a {
-    color: #000; }
-  
-  a:visited {
-    color: #666; }
-  
-  a:hover {
-    color: #fff;
-    background-color: rgb(46, 46, 46); }
-  
-  table, th, td {
-    border: 1px solid  #666;
-    border-collapse: collapse;
-  }  
-  
-  th {
-    padding-bottom: 5px; 
-  }
-  
-  td {
-    padding: 0 5px 7px; }
+  background-color: #fff;
+  color: #333;
+  margin: 33px; }
 
-  div.field,
-  div.actions {
-    margin-bottom: 10px; }
-  
-  #notice {
-    color: green; }
-  
-  .field_with_errors {
-    padding: 2px;
-    background-color: red;
-    display: table; }
-  
-  #error_explanation {
-    width: 450px;
-    border: 2px solid red;
-    padding: 7px 7px 0;
-    margin-bottom: 20px;
-    background-color: #f0f0f0; }
-  
-  #error_explanation h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff; }
-  
-  #error_explanation ul li {
-    font-size: 12px;
-    list-style: square; }
-  
-  label {
-    display: block; }
+body, p, ol, ul, td {
+  font-family: roboto, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000; }
+
+a:visited {
+  color: #666; }
+
+a:hover {
+  color: #fff;
+  background-color: rgb(46, 46, 46); }
+
+table, th, td {
+  border: 1px solid  #666;
+  border-collapse: collapse;
+}  
+
+th {
+  padding-bottom: 5px; 
+}
+
+td {
+  padding: 0 5px 7px; 
+}
+
+div.field, div.actions {
+  margin-bottom: 10px; 
+}
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff; }
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square; 
+}
+
+label {
+  display: block; 
+} */
+
+
+}
